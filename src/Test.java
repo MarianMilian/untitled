@@ -74,8 +74,7 @@ public class Test {
 
     }
 
-    private static List<Employee> readEmployeesFromFile(String fileName)
-            throws IOException, ClassNotFoundException {
+    private static List<Employee> readEmployeesFromFile(String fileName) throws IOException, ClassNotFoundException {
         ObjectInputStream employeesInputStream = new ObjectInputStream(new FileInputStream(fileName));
         return (List<Employee>) employeesInputStream.readObject();
     }
@@ -123,9 +122,13 @@ public class Test {
 
         @Override
         public String toString() {
-            return new StringJoiner(", ", Employee.class.getSimpleName() + "[", "]")
-                    .add("name='" + name + "'").add("workedHours=" + workedHours)
-                    .add("hourPaid=" + hourPaid).toString();
+            return new StringJoiner(", ",
+                    Employee.class.getSimpleName() + "[",
+                    "]")
+                    .add("name='" + name + "'")
+                    .add("workedHours=" + workedHours)
+                    .add("hourPaid=" + hourPaid)
+                    .toString();
         }
     }
 
